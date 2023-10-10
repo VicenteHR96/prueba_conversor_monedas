@@ -7,6 +7,7 @@ const alertaSelect = document.querySelector("#alerta-select");
 const resultado = document.querySelector("#resultado");
 const btn = document.querySelector("button");
 const ctx = document.getElementById("myChart");
+const grafica = document.getElementById("grafica");
 
 var myChart;
 
@@ -68,7 +69,7 @@ async function getUrl(monedaSeleccionada) {
     // Crea nuevo gráfico, según la opción seleccionada:
     myChart = new Chart(ctx, renderGrafico(serie));
   } catch (error) {
-    console.log(`Hubo un error al momento de cargar los datos.`);
+    grafica.innerHTML = `<h3>Ha ocurrido el siguiente error al cargar los datos: ${error.message}</h3>`;
   }
 }
 
@@ -131,7 +132,7 @@ function renderGrafico(arraySeries) {
       },
     };
     return config;
-  } catch (e) {
-    console.log(`Ha ocurrido el siguiente error:<br>${e.message}`);
+  } catch (error) {
+    grafica.innerHTML = `<h3>Ha ocurrido el siguiente error: ${error.message}</h3>`;
   }
 }

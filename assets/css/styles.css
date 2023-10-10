@@ -83,11 +83,28 @@ span {
   line-height: 150%;
   letter-spacing: 2px;
   text-transform: uppercase;
-  padding-bottom: 1rem;
 }
 
 .sections {
-  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.section-clp {
+  height: 22.5%;
+}
+
+.section-divisas {
+  height: 22.5%;
+}
+
+.section-btn {
+  height: 10%;
+}
+
+.section-resultado {
+  height: 10%;
 }
 
 input {
@@ -172,7 +189,11 @@ h3 {
   padding-top: 0.5rem;
 }
 
-#myChart {
-  height: 12rem;
+#grafica {
+  height: 35%;
   padding-top: 1rem;
+}
+
+#myChart {
+  height: 95%;
 }
